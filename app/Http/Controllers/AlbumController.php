@@ -13,6 +13,7 @@ class AlbumController extends Controller
         return view("albums", compact("albums"));
     }
     function detailsAlbum($id){
-        return view("albums");
+        $album = Album::findOrFail($id);
+        return view("detailsAlbum", compact("album"));
     }
 }

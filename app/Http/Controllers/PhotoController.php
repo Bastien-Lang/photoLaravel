@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,4 +11,5 @@ class PhotoController extends Controller
     function index(){
         return view("index");
     }
+
 }

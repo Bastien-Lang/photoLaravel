@@ -1,3 +1,28 @@
 body{
-    background-color: red;
+    margin: 0;
+    padding: 0;
+}
+.small{
+    max-width: 300px;
+}
+
+.big{
+    width: 100%;
+}
+
+.blurred{
+    filter: blur(10px);
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    width: 90vw;
+}
+.overlay img{
+    width: 100%;
+}
+#album{
+    position: relative;
 }
