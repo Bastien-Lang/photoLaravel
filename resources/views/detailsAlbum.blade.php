@@ -9,5 +9,6 @@
                 <img src="{{$photo->url}}" alt="$photo->titre" id="photo{{$photo->id}}" class="small">
             </div>
         @endforeach
+        <div id="overlay"></div>
     </div>
 @endsection
