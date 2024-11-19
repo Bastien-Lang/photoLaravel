@@ -1,19 +1,6 @@
 @extends('layout')
 
 @section("content")
-<header>
-    <nav>
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Albums</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <h1>Picture</h1>
-    <img src="logo.png" alt="Logo" width="100" height="100">
-    <h1>Albums Photos</h1>
-</header>
-
 <section class="albums">
     <div class="album">
         <img src="album1_thumbnail.jpg" alt="Album 1" class="album-thumbnail">
@@ -33,7 +20,6 @@
         <p>Description de l'album 3. Une collection d'images de moments inoubliables.</p>
         <a href="#" class="view-button">Voir l'album</a>
     </div>
-    <!-- Ajouter d'autres albums ici -->
 </section>
 
 <section class="popular">
@@ -43,9 +29,5 @@
         <h2>Voyage en montagne</h2>
         <a href="#" class="view-button">Voir l'album</a>
     </div>
-    <!-- Ajouter des albums populaires ici -->
 </section>
-
-<style>
-</style>
 @endsection
