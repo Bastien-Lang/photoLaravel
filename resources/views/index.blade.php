@@ -29,5 +29,5 @@
         <h2>Voyage en montagne</h2>
         <a href="#" class="view-button">Voir l'album</a>
     </div>
-</section>
+    </section>
 @endsection

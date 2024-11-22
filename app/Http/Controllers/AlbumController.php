@@ -12,8 +12,10 @@ class AlbumController extends Controller
         $albums = Album::all();
         return view("albums", compact("albums"));
     }
-    function detailsAlbum($id){
+    function detailsAlbum(Request $request, $id){
         $album = Album::findOrFail($id);
-        return view("detailsAlbum", compact("album"));
+        $ordre = $request->input("ordre") == null ? "id" : $request->input("ordre");
+        $album = Album::findOrFail($id);
+        return view("detailsAlbum", compact("album", "ordre"));
     }
 }
