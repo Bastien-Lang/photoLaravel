@@ -16,4 +16,14 @@ class Album extends Model
     public function user() {
         return $this->belongsTo(User::class,"user_id");
     }
+
+    public function limitPosts(){
+        return $this->hasMany('App\Models\Album')->limit(3);
+    }
+
+    // Méthode pour récupérer la dernière photo
+    public function lastPhoto()
+    {
+        return $this->hasOne(Photo::class, 'album_id')->latestOfMany(); // Dernière photo par date de création
+    }
 }

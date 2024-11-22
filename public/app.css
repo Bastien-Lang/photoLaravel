@@ -185,7 +185,7 @@ nav ul li a:hover {
 .view-button {
     display: inline-block;
     background-color: #282828;
-    color: white;
+    color: white !important;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -255,4 +255,14 @@ header .right{
     display: flex;
     justify-content: space-between;
     flex-basis: 8%;
+}
+
+.album img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.album a{
+    text-decoration: none;
+    color: #282828;
 }
