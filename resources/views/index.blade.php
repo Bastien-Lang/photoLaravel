@@ -2,24 +2,20 @@
 
 @section("content")
 <section class="albums">
+    @foreach($albums as $album)
     <div class="album">
-        <img src="album1_thumbnail.jpg" alt="Album 1" class="album-thumbnail">
-        <h2>Album 1</h2>
-        <p>Description de l'album 1. Un aperçu de ce que vous trouverez à l'intérieur.</p>
-        <a href="#" class="view-button">Voir l'album</a>
+        <a href="{{route('detailsAlbum', ['id' => $album->id])}}">
+            @if($album->lastPhoto)
+                <img src="{{$album->lastPhoto->url}}" alt="Dernière photo de l'album {{ $album->titre }}">
+            @else
+                <p>Aucune photo dans cet album.</p>
+            @endif
+            <h2>{{$album->titre}}</h2>
+            <p>{{$album->creation}}</p>
+            <a href="{{route('detailsAlbum', ['id' => $album->id])}}" class="view-button">Voir l'album</a>
+        </a>
     </div>
-    <div class="album">
-        <img src="album2_thumbnail.jpg" alt="Album 2" class="album-thumbnail">
-        <h2>Album 2</h2>
-        <p>Description de l'album 2. Explorez de magnifiques photos prises lors de notre dernier voyage.</p>
-        <a href="#" class="view-button">Voir l'album</a>
-    </div>
-    <div class="album">
-        <img src="album3_thumbnail.jpg" alt="Album 3" class="album-thumbnail">
-        <h2>Album 3</h2>
-        <p>Description de l'album 3. Une collection d'images de moments inoubliables.</p>
-        <a href="#" class="view-button">Voir l'album</a>
-    </div>
+    @endforeach
 </section>
 
 <section class="popular">
@@ -29,5 +25,5 @@
         <h2>Voyage en montagne</h2>
         <a href="#" class="view-button">Voir l'album</a>
     </div>
-</section>
+    </section>
 @endsection
