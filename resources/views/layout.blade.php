@@ -14,7 +14,6 @@
             <div id="search">
                 <form action="{{route('recherche')}}" method="get">
                 <input type="text" name="recherche" placeholder="Rechercher une photo" required>
-                <i class='bx bx-search-alt'></i>
                 <input type="submit" value="Valider">
                 </form>
             </div>
