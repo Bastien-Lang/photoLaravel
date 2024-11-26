@@ -2,7 +2,8 @@
 
 @section("content")
     @include("errors")
-    <form action="{{route('register')}}" method="post">
+    <div
+    <form action="{{route('register')}}" method="post" id="register">
         @csrf
         <input type="text" name="name" required placeholder="Name" /><br />
         <input type="email" name="email" required placeholder="Email" /><br />
@@ -11,4 +12,5 @@
         <input type="submit" /><br />
     </form>
     Déjà un compte  ? <a href="{{route('login')}}">Connectez vous</a>
+</div>
 @endsection

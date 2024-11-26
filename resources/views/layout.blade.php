@@ -9,15 +9,6 @@
 <body>
     <header>
         <nav>
-<<<<<<< HEAD
-            <a href="{{route('index')}}">Accueil</a>
-            <a href="{{route('albums')}}">Albums</a>
-            <div id="search">
-                <form action="{{route('recherche')}}" method="get">
-                <input type="text" name="recherche" placeholder="Rechercher une photo" required>
-                <input type="submit" value="Valider">
-                </form>
-=======
             <div class="left">
                 <a href="{{route('index')}}">Accueil</a>
                 <a href="{{route('albums')}}">Albums</a>
@@ -41,7 +32,6 @@
         <a href="{{route('login')}}">Login</a>
         <a href="{{route('register')}}">Register</a>
     @endauth
->>>>>>> a31026b7c3dfe9b7b928c592762ba33210325cb0
             </div>
         </nav>
     </header>
