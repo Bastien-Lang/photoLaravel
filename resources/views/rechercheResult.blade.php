@@ -3,10 +3,12 @@
 @section("content")
 <div id="album">  
     @forelse($photos as $photo) 
-        <span>Résultat(s) pour la recherche "{{$recherche}}"</span>
-        <div class="photos default">
-            <span>{{$photo->titre}}</span>
-            <img src="{{$photo->url}}" alt="$photo->titre" id="photo{{$photo->id}}" class="small">
+        <div id="resultsRecherche">
+            <span>Résultat(s) pour la recherche "{{$recherche}}"</span>
+            <div class="photos default">
+                <span>{{$photo->titre}}</span>
+                <img src="{{$photo->url}}" alt="$photo->titre" id="photo{{$photo->id}}" class="small">
+            </div>
         </div>
         <div id="overlay"></div>
     @empty
