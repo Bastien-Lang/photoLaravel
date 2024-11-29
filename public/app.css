@@ -280,3 +280,118 @@ header .right{
     margin-bottom: 2rem;
 }
 
+#loginform {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+#loginform input[type="email"],
+#loginform input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#loginform input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#loginform input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 122px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#loginform input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.errors {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+@media (max-width: 400px) {
+    form#loginform {
+        width: 90%;
+    }
+}
+
+
+#register {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+#register input[type="text"],
+#register input[type="email"],
+#register input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    
+}
+
+#register input[type="submit"] {
+    background-color: #45a049;
+    color: white;
+    margin: 10px 0;
+    border: none;
+    padding: 10px 122px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+    
+}
+
+#register input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+#register + a {
+    display: block;
+    margin-top: 15px;
+    color: #007BFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+#register + a:hover {
+    text-decoration: underline;
+}
+
+.errors {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+@media (max-width: 400px) {
+    form#registerform {
+        width: 90%;
+    }
+}
