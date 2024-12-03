@@ -5,12 +5,14 @@
     <ul>
     @foreach($albums as $album)
         <li>
+        <a href="{{route('detailsAlbum', ['id' => $album->id])}}">
         @if($album->lastPhoto)
                 <img src="{{$album->lastPhoto->url}}" alt="Dernière photo de l'album {{ $album->titre }}">
             @else
                 <p>Aucune photo dans cet album.</p>
             @endif
-            <a href="{{route('detailsAlbum', ['id' => $album->id])}}">{{$album->titre}}</a>
+           {{$album->titre}}
+        </a>
         </li>
     @endforeach
     </ul>
