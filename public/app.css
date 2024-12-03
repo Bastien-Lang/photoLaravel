@@ -48,6 +48,7 @@ h1 {
     display: block;
 }
 
+
 .photos {
     background: #fff;
     border: 1px solid #ddd;
@@ -154,6 +155,60 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+
+#sectionAlbum li{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+#sectionAlbum li{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#sectionAlbum li:hover {
+    transform: scale(1.05);
+}
+
+#sectionAlbum li-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#sectionAlbum li:hover .album-thumbnail {
+    transform: scale(1.1);
+}
+
+#sectionAlbum li h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+#sectionAlbum li p {
+    color: #555;
+    font-size: 1em;
+}
+#sectionAlbum li img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+#sectionAlbum li a{
+    text-decoration: none;
+    color: #282828;
+}
+
 
 /* Section Albums */
 .albums {
