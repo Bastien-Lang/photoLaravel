@@ -40,6 +40,13 @@ h1 {
     gap: 20px;
     padding: 20px;
 }
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
 
 .photos {
     background: #fff;
@@ -52,6 +59,7 @@ h1 {
     flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;
     flex-basis: 25%;
+    position: relative;
 }
 
 .photos:hover {
@@ -61,10 +69,16 @@ h1 {
 
 .photos span {
     display: block;
-    padding: 10px;
-    font-size: 1.1em;
-    color: #555;
-    background-color: #f1f1f1;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 1.6em;
+    color: #f0f0f0;
+    background-color: #2828287e;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-transform: capitalize;
+
 }
 
 .photos img {
@@ -83,7 +97,6 @@ h1 {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    display: none;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -94,6 +107,10 @@ h1 {
     max-height: 90%;
     border-radius: 5px;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%)
 }
 
 /* Page d'accueil*/
@@ -286,9 +303,12 @@ header .right{
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
-    text-align: center;
 }
-
+.sectionFormulaire{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #loginform input[type="email"],
 #loginform input[type="password"] {
     width: calc(100% - 20px);

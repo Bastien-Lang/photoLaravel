@@ -11,6 +11,8 @@
                 
             </div>
         @endforeach
-        <div id="overlay"></div>
+        <div id="overlay" class="hide">
+            <img src="" alt="">
+        </div>
     </div>
 @endsection
