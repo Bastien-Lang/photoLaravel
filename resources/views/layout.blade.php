@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{asset('app.css')}}">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 <body>
     <header>
@@ -15,8 +16,7 @@
                 <div id="search">
                     <form action="{{route('recherche')}}" method="get">
                     <input type="text" name="recherche" placeholder="Rechercher une photo" required>
-                    <i class='bx bx-search-alt'></i>
-                    <input type="submit" value="Valider">
+                    <button type="submit" value=""><box-icon name='search'></box-icon></button>
                     </form>
                 </div>
             </div>

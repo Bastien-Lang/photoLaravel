@@ -21,4 +21,3 @@ for (let image of images) {
 
 
 
-

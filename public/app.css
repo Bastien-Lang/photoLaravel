@@ -172,6 +172,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 15px;
     transition: transform 0.3s ease-in-out;
+    grid-area: album;
 }
 
 #sectionAlbum li:hover {
@@ -322,6 +323,7 @@ header .left{
     display: flex;
     justify-content: space-evenly;
     flex-basis: 35%;
+    align-items: center;
 }
 
 header .right{
@@ -441,10 +443,35 @@ header .right{
     
 }
 
+#search button{
+    background: none;
+    border: none;
+}
+#search button i{
+    color: #f0f0f0;
+}
+#search button{
+    background: none;
+    position: absolute;
+    z-index: 111;
+    right: 0;
+}
+
+#search form{
+    display: flex;
+}
+#search{
+    position: relative;
+}
+
 #register input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+#sectionAlbum ul{
+    display: grid;
+    grid-template-areas: "album album album";
+}
 
 #register + a {
     display: block;
