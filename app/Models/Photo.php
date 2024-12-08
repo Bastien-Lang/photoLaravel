@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'album_id',
+        'titre',
+        'url',
+    ];
+    
     public $timestamps = false;
 
     public function album() {

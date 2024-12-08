@@ -172,7 +172,6 @@ nav ul li a:hover {
     text-align: center;
     padding: 15px;
     transition: transform 0.3s ease-in-out;
-    grid-area: album;
 }
 
 #sectionAlbum li:hover {
@@ -333,8 +332,9 @@ header .right{
 }
 
 .album img{
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
+    max-height: 200px;
 }
 
 .album a{
@@ -470,7 +470,8 @@ header .right{
 
 #sectionAlbum ul{
     display: grid;
-    grid-template-areas: "album album album";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 #register + a {

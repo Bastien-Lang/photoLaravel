@@ -22,6 +22,8 @@
             </div>
             <div class="right">
             @auth
+            <a href="{{route('ajouterAlbum')}}">Ajouter un album</a>
+
         Bonjour {{Auth::user()->name}}
         <a href="{{route('logout')}}"
            onclick="document.getElementById('logout').submit(); return false;">Logout</a>

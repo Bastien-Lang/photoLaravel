@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'titre',
+        'creation',
+    ];
     public $timestamps = false;
     public function photos() {
         return $this->hasMany(Photo::class, "album_id");

@@ -14,4 +14,7 @@ class PhotoController extends Controller
         $photos = Photo::where('titre','LIKE',"%{$recherche}%")->get();
         return view("rechercheResult", compact("photos", "recherche"));
     }
+    function ajouterAlbum(){
+      return view("ajouterAlbum");
+  }
 }

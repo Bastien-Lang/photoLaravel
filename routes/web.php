@@ -19,3 +19,7 @@ Route::get('/', [AlbumController::class, 'index'])->name('index');
 Route::get('/albums', [AlbumController::class, 'albums'])->name('albums');
 Route::get('/detailsAlbum/{id}', [AlbumController::class, 'detailsAlbum'])->name('detailsAlbum');
 Route::get("/recherche", [PhotoController::class, "recherche"]) -> name("recherche");
+Route::get("/ajouterAlbum", [PhotoController::class, "ajouterAlbum"]) -> name("ajouterAlbum");
+Route::post("/ajouterAlbum", [AlbumController::class, "storeAlbum"])->name("storeAlbum");
+Route::post('/album/{id}/ajouterPhoto', [AlbumController::class, 'ajouterPhoto'])->name('ajouterPhoto');
+Route::get('/delete/{id}/ajouterPhoto', [AlbumController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
