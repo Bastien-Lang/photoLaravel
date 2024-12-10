@@ -3,6 +3,7 @@
 @section("content")
     <h1>{{$album->titre}}</h1>
     <a href="?ordre=titre">Trier par titre</a>
+    <a href="?ordre=note">Trier par note</a>
     @auth
         <div class="add-photo">
             <form action="{{ route('ajouterPhoto', ['id' => $album->id]) }}" method="POST" enctype="multipart/form-data">

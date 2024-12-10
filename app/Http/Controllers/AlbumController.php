@@ -20,12 +20,12 @@ class AlbumController extends Controller
     return view("index", compact('albums', 'tags'));
     }
 
-    function albums(){
-        $albums = Album::all();
-        return view("albums", compact("albums"));
+    function albums(Request $request){
+        $ordre = $request->input('ordre') ?? 'id';
+        $albums = Album::orderBy($ordre, 'asc')->get();
+        return view("albums", compact("albums", "ordre"));
     }
     function detailsAlbum(Request $request, $id){
-        $album = Album::findOrFail($id);
         $ordre = $request->input("ordre") == null ? "id" : $request->input("ordre");
         $album = Album::findOrFail($id);
         $tags = Tag::all();

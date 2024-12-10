@@ -2,6 +2,8 @@
 
 @section("content")
 <section id = "sectionAlbum"> 
+    <a href="?ordre=titre">Trier par titre</a>
+    <a href="?ordre=creation">Trier par date</a>
     <ul>
     @foreach($albums as $album)
         <li>
