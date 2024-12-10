@@ -5,6 +5,8 @@
     <div id="logo">
         <img src="{{asset('logo-picture.png')}}" alt="logo">
     </div>
+    <h2>Une envie créative ?</h2>
+    <a class="button-50" href="{{route('ajouterAlbum')}}">Ajouter un album</a>
     <div id="lasts">
         <h1>Les 3 derniers albums</h1>
     </div>
@@ -26,7 +28,5 @@
             </div>
         @endforeach
     </div>
-    <h2>Une envie créative ?</h2>
-    <a href="{{route('ajouterAlbum')}}">Ajouter un album</a>
 </section>
 @endsection
