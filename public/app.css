@@ -218,7 +218,21 @@ nav ul li a:hover {
 
 
 /* Section Albums */
-.albums {
+
+#logo>img{
+    max-width: 400px;
+}
+
+#lasts{
+    display: flex;
+    margin-left: 10%;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+}
+#allAlbums {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
