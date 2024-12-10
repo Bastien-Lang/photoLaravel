@@ -3,7 +3,7 @@
 @section("content")
     @include("errors")
     <section class="sectionFormulaire">
-        <div
+        <div>
             <form action="{{route('register')}}" method="post" id="register">
                 @csrf
                 <input type="text" name="name" required placeholder="Name" /><br />
