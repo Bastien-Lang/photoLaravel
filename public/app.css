@@ -34,11 +34,11 @@ h1 {
 
 }
 #album {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(3, auto); 
+    gap: 80px;
+    padding: 20px; 
 }
 .hide{
     display: none;
@@ -79,9 +79,14 @@ h1 {
     bottom: 0;
     width: 100%;
     text-transform: capitalize;
+    margin-bottom: 3rem;
 
 }
 
+.photos a{
+    padding: 1rem;
+    color: red;
+}
 .photos img {
     width: 100%;
     height: 100%;
@@ -162,6 +167,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     gap: 30px;
     padding: 20px;
+    align-items: center;
 }
 
 #sectionAlbum li{
@@ -207,13 +213,14 @@ nav ul li a:hover {
 #sectionAlbum li a{
     text-decoration: none;
     color: #282828;
+    width: 100%;
 }
 
 
 /* Section Albums */
 .albums {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
     padding: 20px;
@@ -227,6 +234,9 @@ nav ul li a:hover {
     text-align: center;
     padding: 15px;
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .album:hover {
@@ -328,10 +338,10 @@ header .left{
 header .right{
     display: flex;
     justify-content: space-between;
-    flex-basis: 8%;
+    flex-basis: 15%;
 }
 
-.album img{
+.album img, #sectionAlbum li img{
     width: 100%;
     object-fit: cover;
     max-height: 200px;
@@ -470,8 +480,11 @@ header .right{
 
 #sectionAlbum ul{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+    grid-template-rows: repeat(3, auto); /* 3 lignes avec une hauteur automatique */
+    gap: 16px; /* Espacement entre les items */
+    padding: 20px; /* Espacement autour de la grille */
+
 }
 
 #register + a {
@@ -497,4 +510,61 @@ header .right{
     form#registerform {
         width: 90%;
     }
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container form{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+.mb-3 input[type="text"],
+.mb-3 input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#loginform input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+}
+
+#loginform input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.add-photo{
+    max-width: 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mb-3{
+    margin: 1rem;
 }

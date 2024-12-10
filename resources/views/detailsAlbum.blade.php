@@ -27,7 +27,7 @@
                 <span>{{$photo->titre}}</span>
                 <img src="{{$photo->url}}" alt="{{$photo->titre}}" id="photo{{$photo->id}}" class="small">
                 @auth
-                    <a href="{{route('delete', ['id' => $photo->id])}}">Supprimer photo</a>
+                    <a href="{{route('delete', ['id' => $photo->id])}}">Supprimer photo </a>
                 @endauth
             </div>
 

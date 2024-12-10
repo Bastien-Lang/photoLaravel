@@ -11,7 +11,7 @@
             @else
                 <p>Aucune photo dans cet album.</p>
             @endif
-           {{$album->titre}}
+           <h3>{{$album->titre}}</h3>
         </a>
         </li>
     @endforeach

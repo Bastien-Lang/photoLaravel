@@ -12,18 +12,11 @@
             @endif
             <h2>{{$album->titre}}</h2>
             <p>{{$album->creation}}</p>
-            <a href="{{route('detailsAlbum', ['id' => $album->id])}}" class="view-button">Voir l'album</a>
+            @if($album->lastPhoto)
+                <a href="{{route('detailsAlbum', ['id' => $album->id])}}" class="view-button">Voir l'album</a>
+            @endif
         </a>
     </div>
     @endforeach
 </section>
-
-<section class="popular">
-    <h2>Albums populaires</h2>
-    <div class="album">
-        <img src="popular_album1.jpg" alt="Popular Album 1" class="album-thumbnail">
-        <h2>Voyage en montagne</h2>
-        <a href="#" class="view-button">Voir l'album</a>
-    </div>
-    </section>
 @endsection

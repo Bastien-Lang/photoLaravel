@@ -22,11 +22,6 @@
             <input type="text" class="form-control" id="titre" name="titre" value="{{ old('titre') }}" required>
         </div>
 
-        <div class="mb-3">
-            <label for="creation" class="form-label">Date de création</label>
-            <input type="date" class="form-control" id="creation" name="creation" value="{{ old('creation') }}" required>
-        </div>
-
         <button type="submit" class="btn btn-primary">Ajouter l'album</button>
     </form>
 </div>

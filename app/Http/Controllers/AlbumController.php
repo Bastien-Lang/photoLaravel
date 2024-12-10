@@ -33,19 +33,14 @@ class AlbumController extends Controller
 
         public function storeAlbum(Request $request)
     {
-        // Validation des données
         $request->validate([
-            'titre' => 'required|string|max:255',
-            'creation' => 'required|date',
+            'titre' => 'required|string|max:255'
         ]);
-
-        // Création de l'album
+        $date = date('Y-m-d');
         Album::create([
             'titre' => $request->input('titre'),
-            'creation' => $request->input('creation'),
+            'creation' => $date,
         ]);
-
-        // Redirection avec un message de succès
         return redirect()->route('albums')->with('success', 'Album ajouté avec succès !');
     }
 

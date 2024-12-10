@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{asset('app.css')}}">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    
 </head>
 <body>
     <header>
@@ -22,18 +23,16 @@
             </div>
             <div class="right">
             @auth
-            <a href="{{route('ajouterAlbum')}}">Ajouter un album</a>
-
-        Bonjour {{Auth::user()->name}}
-        <a href="{{route('logout')}}"
-           onclick="document.getElementById('logout').submit(); return false;">Logout</a>
-        <form id="logout" action="{{route('logout')}}" method="post">
-            @csrf
-        </form>
-    @else
-        <a href="{{route('login')}}">Login</a>
-        <a href="{{route('register')}}">Register</a>
-    @endauth
+                <a href="{{route('ajouterAlbum')}}">Ajouter un album</a>
+                <a href="{{route('logout')}}"
+                onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+                <form id="logout" action="{{route('logout')}}" method="post">
+                    @csrf
+                </form>
+            @else
+                <a href="{{route('login')}}">Login</a>
+                <a href="{{route('register')}}">Register</a>
+            @endauth
             </div>
         </nav>
     </header>
