@@ -9,15 +9,16 @@
                 @csrf
                 <div class="mb-3">
                     <label for="titre" class="form-label">Titre de la photo</label>
-                    <input type="text" class="form-control" id="titre" name="titre" required>
+                    <input type="text" class="form-control" id="titre" name="titre">
                 </div>
 
                 <div class="mb-3 tags">
+                @foreach($tags as $tag)
                     <div>
-                        <label for="neige" class="form-label">Neige</label>
-                        <input type="checkbox" class="form-control" name="neige" required>
+                        <label for="{{$tag->nom}}" class="form-label">{{$tag->nom}}</label>
+                        <input type="checkbox" class="form-control" name="tags[]" id="{{$tag->nom}}" value="{{$tag->id}}">
                     </div>
-                    
+                @endforeach
                 </div>
 
                 <div class="mb-3">
@@ -34,6 +35,7 @@
             <div class="photos default">
                 <span>{{$photo->titre}}</span>
                 <img src="{{$photo->url}}" alt="{{$photo->titre}}" id="photo{{$photo->id}}" class="small">
+
                 @auth
                     <a href="{{route('delete', ['id' => $photo->id])}}">Supprimer photo </a>
                 @endauth

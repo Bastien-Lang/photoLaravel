@@ -23,3 +23,5 @@ Route::get("/ajouterAlbum", [PhotoController::class, "ajouterAlbum"]) -> name("a
 Route::post("/ajouterAlbum", [AlbumController::class, "storeAlbum"])->name("storeAlbum");
 Route::post('/album/{id}/ajouterPhoto', [AlbumController::class, 'ajouterPhoto'])->name('ajouterPhoto');
 Route::get('/delete/{id}/ajouterPhoto', [AlbumController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+Route::get('/photos/tags/{tagId}', [PhotoController::class, 'photosParTags'])->name('photosParTags');
+

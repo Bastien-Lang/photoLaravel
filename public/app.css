@@ -223,14 +223,30 @@ nav ul li a:hover {
     max-width: 400px;
 }
 
-#lasts{
+.lasts{
     display: flex;
     margin-left: 10%;
 }
 
+.tags-filter{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tags-filter>a{
+    text-decoration: none;
+    color: #007BFF;
+    text-transform: capitalize;
+}
 #logo{
     display: flex;
     justify-content: center;
+}
+
+#addAlbum{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #allAlbums {
     display: flex;

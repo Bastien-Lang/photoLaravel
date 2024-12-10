@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Photo;
 
 class AlbumController extends Controller
 {
@@ -15,8 +16,8 @@ class AlbumController extends Controller
         ->orderBy('creation', 'desc') // Trier les albums par date de création
         ->limit(3) // Limiter à 3 albums
         ->get();
-
-    return view("index", compact('albums'));
+        $tags = Tag::all();
+    return view("index", compact('albums', 'tags'));
     }
 
     function albums(){
@@ -27,8 +28,10 @@ class AlbumController extends Controller
         $album = Album::findOrFail($id);
         $ordre = $request->input("ordre") == null ? "id" : $request->input("ordre");
         $album = Album::findOrFail($id);
-        return view("detailsAlbum", compact("album", "ordre"));
+        $tags = Tag::all();
+        return view("detailsAlbum", compact("album", "ordre", "tags"));
     }
+
 
 
         public function storeAlbum(Request $request)
@@ -45,22 +48,35 @@ class AlbumController extends Controller
     }
 
     public function ajouterPhoto(Request $request, $id)
-    {
-        $request->validate([
-            'titre' => 'required|string|max:255',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif',
+{
+    $request->validate([
+        'titre' => 'required|string|max:255',
+        'photo' => 'required|image|mimes:jpeg,png,jpg,gif',
+        'tags' => 'required|array|min:1'
+    ]);
+
+    $hashname = $request->file('photo')->hashName();
+    $request->file('photo')->storeAs('public/images', $hashname);
+
+    $photo = new Photo();
+    $photo->titre = $request->input('titre');
+    $photo->url = env('APP_URL') . "/storage/images/$hashname";
+    $photo->album_id = $id;
+    $photo->save();
+
+    $photoId = $photo->id;
+    $tags = $request->input('tags');
+
+    foreach ($tags as $tag) {
+        DB::table('possede_tag')->insert([
+            'tag_id' => $tag,
+            'photo_id' => $photoId,
         ]);
-
-        $hashname = $request->file('photo')->hashName();
-        $request->file('photo')->storeAs('public/images', $hashname);
-        $photo = new Photo();
-        $photo->titre = $request->input("titre");
-        $photo->url = env('APP_URL')."/storage/images/$hashname";
-        $photo->album_id = $id;
-        $photo->save();
-
-        return redirect()->route('detailsAlbum', ['id' => $id])->with('success', 'Photo ajoutée avec succès !');
     }
+
+    return redirect()->route('detailsAlbum', ['id' => $id])->with('success', 'Photo ajoutée avec succès !');
+}
+
 
     public function delete($id){
         $photo = Photo::findOrFail($id);
@@ -68,4 +84,8 @@ class AlbumController extends Controller
         $photo->delete();
         return redirect(route('detailsAlbum', ['id'=>$album_id]));
     }
+
+    
+
 }
+

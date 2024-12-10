@@ -2,13 +2,21 @@
 
 @section("content")
 <section class="albums">
-    <div id="logo">
+    <div id="logo" class="center">
         <img src="{{asset('logo-picture.png')}}" alt="logo">
     </div>
-    <h2>Une envie créative ?</h2>
-    <a class="button-50" href="{{route('ajouterAlbum')}}">Ajouter un album</a>
-    <div id="lasts">
+    <div class="center" id="addAlbum">
+        <h2>Une envie créative ?</h2>
+        <a class="button-50" href="{{route('ajouterAlbum')}}">Ajouter un album</a>
+    </div>
+    <div class="lasts">
         <h1>Les 3 derniers albums</h1>
+    </div>
+    <div class="tags-filter lasts">
+        <h3>Filtrer par tags :</h3>
+        @foreach($tags as $tag)
+            <a href="{{ route('photosParTags', ['tagId' => $tag->id]) }}" class="tag-link">{{ $tag->nom }}</a>
+        @endforeach
     </div>
     <div id="allAlbums">
         @foreach($albums as $album)
@@ -27,6 +35,8 @@
                 </a>
             </div>
         @endforeach
+
+        
     </div>
 </section>
 @endsection
