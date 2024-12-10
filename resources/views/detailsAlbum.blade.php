@@ -12,6 +12,14 @@
                     <input type="text" class="form-control" id="titre" name="titre" required>
                 </div>
 
+                <div class="mb-3 tags">
+                    <div>
+                        <label for="neige" class="form-label">Neige</label>
+                        <input type="checkbox" class="form-control" name="neige" required>
+                    </div>
+                    
+                </div>
+
                 <div class="mb-3">
                     <label for="photo" class="form-label">Choisir une photo</label>
                     <input type="file" class="form-control" id="photo" name="photo" accept="image/*" required>

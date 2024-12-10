@@ -582,3 +582,8 @@ header .right{
 .mb-3{
     margin: 1rem;
 }
+
+.tags{
+    display: flex;
+    flex-direction: column;
+}
